@@ -1,0 +1,432 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 10px;
+	font-family: "Roboto Cn", sans-serif;
+}
+
+a{
+	text-decoration: none;
+	color: #eee;
+}
+
+header{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)), url("images/ez\ bg\ 1.jpg") center no-repeat;
+	background-size: cover;
+	position: relative;
+  overflow: hidden;
+}
+
+.container{
+	max-width: 120rem;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.menu-toggle{
+	position: fixed;
+	top: 2.5rem;
+	right: 2.5rem;
+	color: #eeeeee;
+	font-size: 3rem;
+	cursor: pointer;
+	z-index: 1000;
+	display: none;
+}
+
+nav{
+	padding-top: 5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 1.6rem;
+}
+
+.brand{
+	font-size: 3rem;
+	font-weight: 300;
+	transform: translateX(-100rem);
+	animation: slideIn .5s forwards;
+}
+
+.brand span{
+	color: crimson;
+}
+
+nav ul{
+	display: flex;
+}
+
+nav ul li{
+	list-style: none;
+	transform: translateX(100rem);
+	animation: slideIn .5s forwards;
+}
+
+nav ul li:nth-child(1){
+	animation-delay: 0s;
+}
+
+nav ul li:nth-child(2){
+	animation-delay: .5s;
+}
+
+nav ul li:nth-child(3){
+	animation-delay: 1s;
+}
+
+nav ul li:nth-child(4){
+	animation-delay: 1.5s;
+}
+
+nav ul li a{
+	padding: 1rem 0;
+	margin: 0 3rem;
+	position: relative;
+	letter-spacing: 2px;
+}
+
+nav ul li a:last-child{
+	margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: crimson;
+	left: 0;
+	transform: scaleX(0);
+	transition: all .5s;
+}
+
+nav ul li a::before{
+	top: 0;
+	transform-origin: left;
+}
+
+nav ul li a::after{
+	bottom: 0;
+	transform-origin: right;
+}
+
+.overlay{
+	background-color: rgba(0,0,0,.95);
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	transition: opacity 650ms;
+	transform: scale(0);
+	opacity: 0;
+  display: none;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+	transform: scaleX(1);
+}
+
+@keyframes slideIn {
+	from{
+
+	}
+	to{
+		transform: translateX(0);
+	}
+}
+
+@media screen and (max-width: 700px){
+
+	.menu-toggle{
+		display: block;
+	}
+
+	nav{
+		padding-top: 0;
+		display: none;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100vh;
+		text-align: center;
+	}
+
+	nav ul{
+		flex-direction: column;
+	}
+
+	nav ul li{
+		margin-top: 5rem;
+	}
+
+	nav ul li a{
+		margin: 0;
+		font-size: 2.5rem;
+	}
+
+	.brand{
+		font-size: 5rem;
+	}
+  
+  .overlay.menu-open,
+  nav.menu-open{
+	  display: flex;
+	  transform: scale(1);
+	  opacity: 1;
+  }
+  
+}
+
+
+h2 {
+    color: #fff;
+    font-size: 50px;
+    margin-left: 10vh;
+    margin-top: 20vh;
+    font-family: 'Alumni Sans Inline One', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Shadows Into Light', cursive;
+    transition: 1s ease-in-out;
+}
+
+h2 span {
+    color: #fff;
+    box-shadow:  20px 20px 30px #23231e,
+    -20px -20px 50px #23231e;
+}
+
+h2 span:hover {
+    color: #fff;
+}
+
+.resume {
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid #6c6d53;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    margin-left: 10vh;
+    top: 5vh;
+    position: relative;
+}
+
+.resume:hover {
+    background: #6c6d53;
+    color: #fff;
+}
+
+.get-in-touch {
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #6c6d53;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    margin-left: 10px;
+    top: 5vh;
+    position: relative;
+}
+
+.get-in-touch:hover {
+    background: none;
+    border: 2px solid #6c6d53;
+    color: #fff;
+}
+
+.full-container {
+    width : 80vh;
+    height: 75vh;
+    background:  #a6a7839a;
+    margin-top: 10vh;
+    border-radius: 10px;
+    right: 2vh;
+    position: relative;
+}
+
+.container2 {
+    width: 45vh;
+    height: 55vh;
+    background: #6c6d53;
+    margin-left: 45vh;
+    position: relative;
+    bottom: 20vh;
+    box-shadow:  5px 5px 10px #000,
+             -2px -2px 10px #000;
+}
+
+.emmanuel {
+    width: 15vh;
+    background: #a6a7839a;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 0vh;
+    top: 1vh;
+}
+
+h4{
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    bottom: 16vh;
+}
+
+.line {
+    border: 1px solid #fff;
+    position: relative;
+    bottom: 10vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    position: relative;
+    bottom: 10vh;
+}
+
+.social {
+    width: 45vh;
+    height: 8vh;
+    background: #fff;
+    bottom: 5vh;
+    position: relative;
+    box-shadow:  2px 2px 5px #000,
+    -1px -1px 5px #000;
+}
+
+h3 {
+    font-size: 40px;
+    position: relative;
+    top: 20vh;
+    display: flex;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 10vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+hr {
+    width:20vh;
+    border: 1px solid #6c6d53;
+    margin-top: 21vh;
+    margin-left: 11vh;
+}
+
+.github {
+    width: 5vh;
+    margin-top: 2vh;
+}
+
+.linkedin {
+    width: 5vh;
+    margin-left: 5vh;
+    margin-top: 2vh;
+}
+
+.indeed {
+    width: 10vh;
+    margin-left: 5vh;
+    position: relative;
+    bottom: 1.5vh;
+}
+
+.instagram {
+    width: 5vh;
+    margin-left: 5vh;
+    margin-top: 2vh;
+}
+
+h5 {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+@media (max-width: 1000px) {
+    h2 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+
+    .resume {
+        font-size: 15px;
+        margin-left: 5px;
+    }
+
+    .get-in-touch {
+        font-size: 15px;
+    }
+
+    .full-container {
+        width: 100%;
+        right: 0;
+        height: 10vh;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 25px;
+        position: relative;
+        bottom: 0vh;
+        top: 2vh;
+        margin-left: 0;
+        text-align: center;
+    }
+    .line2 {
+        display: none;
+    }
+
+    .container2 {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 30vh;
+    }
+
+    h5 {
+        margin-top: 60vh;
+    }
+    .social {
+        width: 100%;
+    }
+
+    .line {
+        bottom: 8vh;
+    }
+    
+}
